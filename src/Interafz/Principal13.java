@@ -5,6 +5,8 @@
  */
 package Interafz;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author sony
@@ -60,7 +62,19 @@ public class Principal13 extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
         jLabel4.setText("Numero de Personas");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 180, -1));
+
+        txtDias.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDiasKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 50, 30));
+
+        txtPersonas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPersonasKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtPersonas, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 50, 30));
 
         jLabel5.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
@@ -104,6 +118,19 @@ public class Principal13 extends javax.swing.JFrame {
     String total;
     int dias,personas,tot,iva,mtotal;
     
+    if(txtDias.getText().isEmpty()){
+     getToolkit().beep();
+     JOptionPane.showMessageDialog(this, "Digite El Numero de Dias","Error",JOptionPane.ERROR_MESSAGE);
+     txtDias.requestFocusInWindow();
+     }
+    
+    else if(txtPersonas.getText().isEmpty()){
+     getToolkit().beep();
+     JOptionPane.showMessageDialog(this, "Digite El Numero de Personas","Error",JOptionPane.ERROR_MESSAGE);
+     txtPersonas.requestFocusInWindow();
+     }
+    
+    else{
     dias= Integer.parseInt(txtDias.getText());
     personas= Integer.parseInt(txtPersonas.getText());
         
@@ -113,6 +140,8 @@ public class Principal13 extends javax.swing.JFrame {
     
     total= String.valueOf(mtotal);
     txtTotal.setText(total);
+    
+    }
     }//GEN-LAST:event_cmdCalcularActionPerformed
 
     private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
@@ -121,6 +150,22 @@ public class Principal13 extends javax.swing.JFrame {
      txtTotal.setText("");
      txtDias.requestFocusInWindow();
     }//GEN-LAST:event_cmdBorrarActionPerformed
+
+    private void txtDiasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDiasKeyTyped
+       char c=evt.getKeyChar(); 
+     if(!Character.isDigit(c)) { 
+              getToolkit().beep();  
+              evt.consume();
+          } 
+    }//GEN-LAST:event_txtDiasKeyTyped
+
+    private void txtPersonasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPersonasKeyTyped
+       char c=evt.getKeyChar(); 
+     if(!Character.isDigit(c)) { 
+              getToolkit().beep();  
+              evt.consume();
+          } 
+    }//GEN-LAST:event_txtPersonasKeyTyped
 
     /**
      * @param args the command line arguments
