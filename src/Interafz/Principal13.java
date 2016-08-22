@@ -28,10 +28,53 @@ public class Principal13 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtDias = new javax.swing.JTextField();
+        txtPersonas = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtTotal = new javax.swing.JTextField();
+        cmdCalcular = new javax.swing.JButton();
+        cmdBorrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Traditional Arabic", 3, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel1.setText("Agencia de Viajes");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 300, -1));
+
+        jLabel2.setFont(new java.awt.Font("Traditional Arabic", 3, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel2.setText("Tour a Cartagena");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 200, -1));
+
+        jLabel3.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel3.setText("Numero de Dias");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 140, -1));
+
+        jLabel4.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel4.setText("Numero de Personas");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 180, -1));
+        jPanel1.add(txtDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 50, 30));
+        jPanel1.add(txtPersonas, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 50, 30));
+
+        jLabel5.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel5.setText("Total a Pagar");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 120, -1));
+
+        txtTotal.setEditable(false);
+        jPanel1.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 90, 30));
+
+        cmdCalcular.setText("Calcular");
+        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, -1));
+
+        cmdBorrar.setText("Borrar");
+        jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -41,7 +84,7 @@ public class Principal13 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
         );
 
         pack();
@@ -83,6 +126,16 @@ public class Principal13 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdBorrar;
+    private javax.swing.JButton cmdCalcular;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtDias;
+    private javax.swing.JTextField txtPersonas;
+    private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
 }
