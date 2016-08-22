@@ -71,9 +71,19 @@ public class Principal13 extends javax.swing.JFrame {
         jPanel1.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 90, 30));
 
         cmdCalcular.setText("Calcular");
+        cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCalcularActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, -1));
 
         cmdBorrar.setText("Borrar");
+        cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdBorrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -89,6 +99,28 @@ public class Principal13 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
+    String total;
+    int dias,personas,tot,iva,mtotal;
+    
+    dias= Integer.parseInt(txtDias.getText());
+    personas= Integer.parseInt(txtPersonas.getText());
+        
+    tot=25000*dias*personas;
+    iva=(tot*12)/100;
+    mtotal=tot+iva;   
+    
+    total= String.valueOf(mtotal);
+    txtTotal.setText(total);
+    }//GEN-LAST:event_cmdCalcularActionPerformed
+
+    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+     txtDias.setText("");
+     txtPersonas.setText("");
+     txtTotal.setText("");
+     txtDias.requestFocusInWindow();
+    }//GEN-LAST:event_cmdBorrarActionPerformed
 
     /**
      * @param args the command line arguments
